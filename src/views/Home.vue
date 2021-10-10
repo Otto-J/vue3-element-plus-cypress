@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <main v-loading="isLoading">
     <el-color-picker :model-value="''" style="vertical-align: middle" />
-
+    {{ isLoading }}
     <el-form ref="formRef" :model="formModel" :rules="formRules">
       <el-row>
         <el-col :span="12">
@@ -23,6 +23,8 @@
 import { ref } from "vue";
 import { ElMessage } from "element-plus";
 import type { ElForm } from "element-plus";
+const isLoading = ref(false);
+
 const useForm = () => {
   const defaultModel = () => ({
     name: "",
@@ -43,6 +45,10 @@ const useForm = () => {
   const validForm = () => {
     formRef.value?.validate((valid) => {
       ElMessage.info("res:" + !!valid);
+      isLoading.value = true;
+      setTimeout(() => {
+        isLoading.value = false;
+      }, 2000);
     });
   };
 
