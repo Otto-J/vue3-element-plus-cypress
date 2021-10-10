@@ -1,6 +1,6 @@
 {
   "name": "vue-project",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "element-plus": "^1.1.0-beta.19",
-    "unplugin-vue-components": "^0.15.6",
     "vue": "^3.2.14",
     "vue-router": "^4.0.11"
   },
@@ -23,9 +22,11 @@
     "@cypress/vue": "^3.0.3",
     "@vitejs/plugin-vue": "^1.9.3",
     "cypress": "^8.5.0",
+    "sass": "^1.42.1",
     "start-server-and-test": "^1.14.0",
     "typescript": "~4.3.5",
+    "unplugin-vue-components": "^0.15.6",
     "vite": "^2.6.3",
-    "vue-tsc": "^0.3.0"
+    "vue-tsc": "^0.28.1"
   }
 }
