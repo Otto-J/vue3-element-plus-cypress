@@ -21,7 +21,8 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-import { ElMessage, ElForm as eForm } from "element-plus";
+import { ElMessage } from "element-plus";
+import type { ElForm } from "element-plus";
 const useForm = () => {
   const defaultModel = () => ({
     name: "",
@@ -37,7 +38,7 @@ const useForm = () => {
       },
     ],
   };
-  const formRef = ref<InstanceType<typeof eForm>>();
+  const formRef = ref<InstanceType<typeof ElForm>>();
 
   const validForm = () => {
     formRef.value?.validate((valid) => {
